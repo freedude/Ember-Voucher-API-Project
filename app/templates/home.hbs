@@ -1,24 +1,23 @@
-<header class="header">
+<nav class="navbar navbar-right bg-phorest">
+    <a class="navbar-brand" href="#">
+        <img src="images/phorest-logo.svg" alt="logo" style="width:150px;">
+    </a>
 
-</header>
+    <SignInInputs />
+
+</nav>
+
+{{client-search-bar
+    searchClient=(action "searchClient")
+}}
+
+{{#if searchComplete}}
+{{client-info
+    class="client-card"
+    card=this.model.clients
+    isLoading=this.isLoadingClients
+    cardComponent="card/client-card"
+}}
 
 
-{{#each this.model as |home|}}
-  <article class="listing">
-    <div class="details">
-      <h3>{{home.title}}</h3>
-      <div class="detail owner">
-        <span>Owner:</span> {{home.owner}}
-      </div>
-      <div class="detail type">
-        <span>Type:</span> {{home.category}}
-      </div>
-      <div class="deatail location">
-        <span>Location:</span> {{home.city}}
-      </div>
-      <div class="detail bedrooms">
-        <span>Number of bedrooms:</span> {{home.bedrooms}}
-      </div>
-    </div>
-  </article>
-{{/each}}
+{{/if}}

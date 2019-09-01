@@ -1,6 +1,6 @@
 @import './common';
 @import './variables';
-@import './reset';
+// @import './reset';
 @import './components/sign-in';
 @import './components/client-input';
 @import './components/client';
@@ -8,3 +8,5 @@
 @import './components/voucher';
 
 @import "ember-bootstrap/bootstrap";
+
+

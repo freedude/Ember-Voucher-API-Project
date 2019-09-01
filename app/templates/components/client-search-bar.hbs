@@ -1,0 +1,37 @@
+{{yield}}
+
+<div class="row">
+    <div class="col-md-9 col-lg-6">
+
+        <form>
+            <div class="form-group">
+                <label for="email-search">Email</label>
+                <input type="email" class="form-control" id="email-search" placeholder="Search client email">
+
+                <label for="phone-search">Phone number</label>
+                <input type="text" class="form-control" id="phone-search" placeholder="Search client phone number">
+            </div>
+
+        </form>
+
+        <button type="button" class="btn btn-primary" {{action "search"}}>
+            Search
+            {{!-- {{fa-icon "search" class="right"}} --}}
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-9 col-lg-6">
+
+        <ul class="search-client-results__list">
+            {{#each clients as |client|}}
+            <li>
+                {{client-info
+                  client=client
+                  }}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
