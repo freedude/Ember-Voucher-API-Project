@@ -1,0 +1,29 @@
+<nav class="navbar navbar-right bg-phorest">
+    <a class="navbar-brand" href="#">
+        <img src="images/phorest-logo.svg" alt="logo" style="width:150px;">
+    </a>
+</nav>
+
+{{#if this.editEvents.showAlert}}
+{{alert-banner
+        type=this.editEvents.alertType
+        message=this.editEvents.alertMessage
+    }}
+{{/if}}
+
+
+{{search-client
+    searchClient=(action "searchClient")
+}}
+
+{{#if searchComplete}}
+{{client-info
+    class="client-card"
+    card=this.model.clients
+    cardComponent="card/client-card"
+}}
+{{/if}}
+
+{{#if this.editEvents.showVoucherCard}}
+<h2>YOU ARE AWESOME</h2>
+{{/if}}

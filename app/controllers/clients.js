@@ -1,7 +1,8 @@
 import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
 
 export default Controller.extend({
-    isLoadingClients: false,
+    editEvents: service(),
     searchComplete: false,
 
     init() {
@@ -9,7 +10,7 @@ export default Controller.extend({
     },
 
     actions: {
-        
+
         searchClient(query) {
 
             this.set('searchComplete', true);
@@ -21,23 +22,19 @@ export default Controller.extend({
             });
 
             if (Object.keys(query).length === 0) {
-                
                 this.set('model.clients', this.store.findAll('client'));
                 return false;
             }
 
-            this.set('isLoadingClients', true);
-            let filteredClients = this.store.query('client', query); // GET Request
+            let filteredClients = this.store.query('client', query);
+            this.set('model.clients', filteredClients);
 
-            this.set('model.clients', filteredClients); // SET model.clients to the result
+            // filteredClients.then(() => {
 
-            filteredClients.then(() => {
-                this.set('isLoadingClients', false);
 
-            })
+            // })
         },
 
-    
 
     }
 });

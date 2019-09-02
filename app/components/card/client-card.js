@@ -1,14 +1,12 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
-// import { logger } from '../../utils/global-utilities';
-
 
 export default Component.extend({
-    classNames: ['row', 'client-item'],
-    createVoucherService: service(),
+    editEvents: service(),
 
     click() {
-        // logger(`activating create-voucher form for ${this.item.firstName} ${this.item.lastName} (${this.item.id})`),
-            this.createVoucherService.openEditor(this.item);
+        this.editEvents.openEditor(this.item);
+        this.set('showVoucherCard', true);
     }
+
 });

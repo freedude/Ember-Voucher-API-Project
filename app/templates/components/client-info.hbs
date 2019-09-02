@@ -11,27 +11,16 @@
         </h4>
         {{/each}}
 
-        <button {{action "createVoucher"}}>
-            Create voucher
-        </button>
-
     </div>
 
 </div>
 
-{{!-- {{#if this.isEmpty}}
+{{#if this.isEmpty}}
 <div class="list-empty bg-dark">
     No records to show...
 </div>
 {{/if}}
 
 {{#if this.isLoading}}
-{{loading-spinner}}
-{{/if}} --}}
-
-
-{{#if showVoucherForm}}
-{{voucher-amount-input
-    client=createVoucherService.currentClient
-}}
+<h2>Loading ... </h2>
 {{/if}}

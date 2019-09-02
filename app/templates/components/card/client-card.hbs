@@ -7,3 +7,14 @@
 <div class="col client-mobile">
     <h5 class="card-title">Phone Number: </h5>{{item.mobile}}
 </div>
+
+<div class="col client-mobile">
+    Click to create voucher
+</div>
+
+
+{{#if showVoucherCard}}
+{{forms/edit-voucher
+    client=editEvents.currentClient
+}}
+{{/if}}

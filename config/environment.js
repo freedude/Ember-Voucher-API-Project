@@ -1,6 +1,7 @@
 'use strict';
 
-module.exports = function(environment) {
+
+module.exports = function (environment) {
   let ENV = {
     modulePrefix: 'phorest-techtest-sean-freeman',
     environment,
@@ -9,7 +10,7 @@ module.exports = function(environment) {
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
-        // e.g. EMBER_NATIVE_DECORATOR_SUPPORT: true
+        // e.g. 'with-controller': true
       },
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
@@ -18,16 +19,14 @@ module.exports = function(environment) {
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+      businessId: 'eTC3QY5W3p_HmGHezKfxJw',
+      branchId: 'SE-J0emUgQnya14mOGdQSw'
     },
 
     API: {
-      url: 'http://api-gateway-dev.phorest.com/third-party-api-server',
+      baseURL: 'http://api-gateway-dev.phorest.com/third-party-api-server',
       username: 'global/cloud@apiexamples.com',
-      password: 'VMlRo/eh+Xd8M~l',
-      businessId: 'eTC3QY5W3p_HmGHezKfxJw',
-      branchId: 'SE-J0emUgQnya14mOGdQSw'
+      password: 'VMlRo/eh+Xd8M~l'
     }
   };
 
