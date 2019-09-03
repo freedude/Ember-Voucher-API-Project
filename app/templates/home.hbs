@@ -2,12 +2,10 @@
     <a class="navbar-brand" href="#">
         <img src="images/phorest-logo.svg" alt="logo" style="width:150px;">
     </a>
-
-    <SignInInputs />
-
 </nav>
 
-{{client-search-bar
+
+{{search-client
     searchClient=(action "searchClient")
 }}
 
@@ -15,9 +13,7 @@
 {{client-info
     class="client-card"
     card=this.model.clients
-    isLoading=this.isLoadingClients
-    cardComponent="card/client-card"
+    cardComponent="client-card"
 }}
-
-
 {{/if}}
+

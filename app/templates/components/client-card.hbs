@@ -14,7 +14,15 @@
 
 
 {{#if showVoucherCard}}
-{{forms/edit-voucher
-    client=editEvents.currentClient
+{{voucher-input
+    createVoucherRecord=(action "createVoucherRecord")
 }}
+{{/if}}
+
+{{#if showRewardCard}}
+<h2>Voucher created and emailed to Client</h2>
+{{/if}}
+
+{{#if showErrorMessage}}
+<h2>There was an Error creating voucher for client, Please try again later</h2>
 {{/if}}

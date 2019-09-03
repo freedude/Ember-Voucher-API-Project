@@ -1,7 +1,6 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
-    isLoadingClients: false,
     searchComplete: false,
 
     init() {
@@ -9,35 +8,23 @@ export default Controller.extend({
     },
 
     actions: {
-        
+
         searchClient(query) {
 
-            this.set('searchComplete', true);
-
-            Object.entries(query).forEach(([key, value]) => {
+            Object.entries(query).forEach(([key, value]) => { // dont use the unused search box
                 if (value.length === 0) {
                     delete query[key];
                 }
             });
 
-            if (Object.keys(query).length === 0) {
-                
-                this.set('model.clients', this.store.findAll('client'));
-                return false;
-            }
+            let singleClient = this.store.query('client', query);
+            this.set('model.clients', singleClient);
+            this.set('searchComplete', true);
 
-            this.set('isLoadingClients', true);
-            let filteredClients = this.store.query('client', query); // GET Request
-
-            this.set('model.clients', filteredClients); // SET model.clients to the result
-
-            filteredClients.then(() => {
-                this.set('isLoadingClients', false);
-
-            })
         },
 
-    
+        
+
 
     }
 });
