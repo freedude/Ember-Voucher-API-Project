@@ -7,6 +7,7 @@ export default Service.extend({
     store: service(),
     showAlert: false,
     showVoucherCard: false,
+    voucherRewarded: false,
 
     closeEditor() {
         // $('.quake-console').slideUp(200);
@@ -28,13 +29,23 @@ export default Service.extend({
     createVoucherRecord(data) {
         data.clientId = this.currentClient.id;
 
-        let voucher = this.store.createRecord('voucher', data);
+        let voucher = this.store.createRecord('voucher', data); // Post request
 
         voucher.save().then(() => {
             this.set('alertMessage', 'Your voucher has been succesfully created...');
             this.set('alertType', 'success');
             this.set('showAlert', true);
             this.set('showVoucherCard', true)
+
+            let createdVoucher = this.store.query('voucher', data.clientId, $('#voucher-amount').val());
+            console.log(createdVoucher);
+
+            createdVoucher.save().then(() => {
+                console.log('Voucher GET request');
+                this.set('voucherRewarded', true);
+                this.set('voucherId', createdVoucher.voucherId )
+                console.log(createdVoucher.voucherId);
+            })
 
             setTimeout(() => {
                 this.set('showAlert', false);
