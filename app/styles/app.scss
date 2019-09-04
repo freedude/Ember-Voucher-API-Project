@@ -1,11 +1,11 @@
 @import './common';
 @import './variables';
-// @import './reset';
-@import './components/sign-in';
-@import './components/client-input';
-@import './components/client';
+@import './reset';
+
+@import './components/search-client';
 @import './components/voucher-input';
-@import './components/voucher';
+@import './components/client-card';
+@import './components/client-info';
 
 @import "ember-bootstrap/bootstrap";
 

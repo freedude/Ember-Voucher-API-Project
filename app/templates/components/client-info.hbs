@@ -1,26 +1,41 @@
-<div class="card" style="width:400px">
-    <img class="card-img-top" src="images/phorest-logo.svg" alt="Card image" width="25px">
-
-    <div class="card-body">
-        {{#each this.card as |cardItem|}}
-        <h4>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3">
+            <div class="card">
+                <div class="card-horizontal">
+                    <div class="img-square-wrapper">
+                        <img class="" src="http://via.placeholder.com/300x180" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                       
+                      
+    {{#each this.card as |cardItem|}}
+        <h5>
             {{component
                 this.cardComponent
                 item=cardItem
             }}
-        </h4>
+        </h5>
         {{/each}}
-
+                    </div>
+                </div>
+                {{!-- <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Create Voucher</a>
+                </div> --}}
+            </div>
+        </div>
     </div>
-
 </div>
 
-{{#if this.isEmpty}}
+
+
+{{!-- {{#if this.isEmpty}}
 <div class="list-empty bg-dark">
     No records to show...
 </div>
-{{/if}}
+{{/if}} --}}
 
-{{#if this.isLoading}}
-<h2>Loading ... </h2>
-{{/if}}
+ {{!-- {{#if isLoading}}
+        <img class="card-img-top" src="images/loading.gif" alt="loading spinner" width="10px">
+        {{/if}} --}}
+

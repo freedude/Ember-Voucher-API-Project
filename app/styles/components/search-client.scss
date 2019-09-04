@@ -1,0 +1,30 @@
+#client-input {
+  margin-top: 2%;
+  margin-left:25%;
+  width: 50%;
+}
+
+.searchInputs{
+ margin-top:2%;
+ margin-left:25%;
+}
+
+.col-form-label {
+  text-align: end;
+}
+
+#buttonRow {
+  margin-left: 43%;
+}
+
+@media screen and (min-width: $mobile) and (max-width: $laptop) {
+  .searchInputs{
+    margin-left:0%;
+   }
+   .col-form-label {
+    text-align: left;
+  }
+  #buttonRow {
+    margin-left: 0%;
+  }
+}

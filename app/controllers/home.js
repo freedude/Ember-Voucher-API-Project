@@ -10,6 +10,7 @@ export default Controller.extend({
     actions: {
 
         searchClient(query) {
+            
 
             Object.entries(query).forEach(([key, value]) => { // dont use the unused search box
                 if (value.length === 0) {
