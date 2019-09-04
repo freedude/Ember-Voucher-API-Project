@@ -1,5 +1,6 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
+import { get, set } from '@ember/object';
 import $ from 'jquery';
 
 export default Component.extend({
@@ -13,39 +14,24 @@ export default Component.extend({
         this.set('currentClient', this.item);
         this.set('showVoucherCard', true);
         this.set('showVoucherButton', false);
-
     },
-        actions: {
-            
+    actions: {
+
         createVoucherRecord(data) {
             data.clientId = this.currentClient.id;
 
             let voucher = this.store.createRecord('voucher', data);
-        
+            set(this, 'voucher', voucher);
+
+            this.set('showRewardCard', true)
+
             voucher.save().then(() => {
                 this.set('showRewardCard', true)
-
-                let createdVoucher = this.store.query('voucher', data.clientId, $('#voucher-amount').val());
-    
-
-            createdVoucher.then(() => {
-                console.log("HAPPENED");
-                // this.set('voucherRewarded', true);
-                // this.set('voucherId', createdVoucher.voucherId )
-                
-            })
-
-                setTimeout(() => {
-                    this.set('showAlert', false);
-                }, 3000);
             })
                 .catch(() => {
                     this.set('showErrorMessage', true)
-
-                   
                 });
 
-            
         }
 
 

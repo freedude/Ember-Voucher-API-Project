@@ -20,13 +20,19 @@
 {{#if showVoucherCard}}
 {{voucher-input
     createVoucherRecord=(action "createVoucherRecord")
+    client=client
 }}
 {{/if}}
 
 {{#if showRewardCard}}
-<h5>Voucher created and e-mailed to Client</h5>
+{{voucher-card
+    voucher=voucher
+    }}
 {{/if}}
 
 {{#if showErrorMessage}}
-<h5>There was an Error creating voucher for client, Please try again later</h5>
+<div class="alert alert-danger" role="alert">
+    There was an Error creating voucher for client, Please try again later
+</div>
+
 {{/if}}
