@@ -1,28 +1,20 @@
-<div class="voucher-editor-header">
-
-    <div class="voucher-editor-title">
-        <div>Creating voucher for:</div>
-        <h2>{{this.client.firstName}} {{this.client.lastName}}</h2>
-    </div>
-</div>
-
 <div class="row">
-    <div class="col-md-6 col-lg-3">
-        <form class="edit-voucher-form">
+    <div class="col-md-12 col-lg-12">
+        <form class="voucherInputForm">
             <div class="row">
                 <div class="col">
-                    <label for="voucher-issue-date">Issue date</label>
+                    <label for="voucher-issue-date">Issue Date</label>
                     <input type="date" class="form-control" id="voucher-issue-date">
                 </div>
 
                 <div class="col">
-                    <label for="voucher-expiry-date">Expiry date</label>
+                    <label for="voucher-expiry-date">Expiry Date</label>
                     <input type="date" class="form-control" id="voucher-expiry-date">
                 </div>
             </div>
             <div class="form-group">
                 <label for="voucher-amount">Amount</label>
-                <input type="text" class="form-control" id="voucher-amount" placeholder="amount">
+                <input type="text" class="form-control" id="voucher-amount" placeholder="Amount">
             </div>
         </form>
     </div>
@@ -30,9 +22,8 @@
 
 <div class="row form-toolbar">
     <div class="col">
-        <button type="button" class="btn btn-primary" {{action "createVoucher"}}>
-            Create voucher
-    
+        <button type="button" class="btn btn-primary" id="createVoucherButton2"  {{action "createVoucher"}}>
+            Create Voucher
         </button>
     </div>
 </div>

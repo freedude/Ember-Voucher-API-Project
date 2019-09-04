@@ -8,10 +8,13 @@ export default Component.extend({
     showAlert: false,
     showRewardCard: false,
     showErrorMessage: false,
+    showVoucherButton: true,
 
     click() {
         this.set('currentClient', this.item);
         this.set('showVoucherCard', true);
+        this.set('showVoucherButton', false);
+
     },
 
     resetVoucherForm() {
@@ -29,8 +32,7 @@ export default Component.extend({
 
             let voucher = this.store.createRecord('voucher', data);
 
-            
-
+        
             voucher.save().then(() => {
                 this.set('alertMessage', 'Your voucher has been succesfully created...');
                 this.set('alertType', 'success');
@@ -38,15 +40,15 @@ export default Component.extend({
                 this.set('showRewardCard', true)
 
                 let createdVoucher = this.store.query('voucher', data.clientId, $('#voucher-amount').val());
-            console.log(createdVoucher);
+           
 
-            createdVoucher.save().then(() => {
-                console.log('Voucher GET request');
-                this.set('voucherRewarded', true);
-                this.set('voucherId', createdVoucher.voucherId )
-                console.log(createdVoucher.voucherId);
-            })
+            createdVoucher.then(() => {
                 console.log("HAPPENED");
+                // this.set('voucherRewarded', true);
+                // this.set('voucherId', createdVoucher.voucherId )
+                
+            })
+               
 
                 setTimeout(() => {
                     this.set('showAlert', false);

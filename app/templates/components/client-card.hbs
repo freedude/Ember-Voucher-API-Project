@@ -1,17 +1,20 @@
 <div class="col client-name">
-    <h5 class="card-title">Name: {{item.firstName}} {{item.lastName}}</h5>
+    <p class="card-title"><b>Name:</b> {{item.firstName}} {{item.lastName}}</p>
 </div>
 <div class="col client-email">
-    <h5 class="card-title">E-mail: {{item.email}}</h5>
+    <p class="card-title"><b>E-mail:</b> {{item.email}}</p>
 </div>
 <div class="col client-mobile">
-    <h5 class="card-title">Phone Number: {{item.mobile}}</h5>
+    <p class="card-title"><b>Phone Number:</b> {{item.mobile}}</p>
 </div>
 
+{{#if showVoucherButton}}
 <div class="col client-mobile">
-    <a href="#" class="btn btn-primary">Create Voucher</a>
+    <button type="button" class="btn btn-primary" id="createVoucherButton">
+        Create Voucher
+    </button>
 </div>
-
+{{/if}}
 
 {{#if showVoucherCard}}
 {{voucher-input
@@ -20,9 +23,9 @@
 {{/if}}
 
 {{#if showRewardCard}}
-<h2>Voucher created and emailed to Client</h2>
+<h5>Voucher created and e-mailed to Client</h5>
 {{/if}}
 
 {{#if showErrorMessage}}
-<h2>There was an Error creating voucher for client, Please try again later</h2>
+<h5>There was an Error creating voucher for client, Please try again later</h5>
 {{/if}}

@@ -1,5 +1,5 @@
 <form class="searchInputs">
-  <div class="form-group row">
+  <div class="form-group row" id="searchInputsFormGroup">
     <label class="col-sm-2 col-form-label">E-mail:</label>
     <div class="col-sm-4">
       <input type="email" class="form-control" id="email-search" placeholder="Search client by email">
@@ -8,13 +8,9 @@
   <div class="form-group row">
     <label class="col-sm-2 col-form-label">Phone:</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="phone-search" placeholder="Search client by phone number">
+      <input type="text" class="form-control" id="phone-search" placeholder="Search client by phone number" >
     </div>
+     <button type="button" class="btn btn-primary" id="searchButton" {{action "search"}}>Search</button>
   </div>
 
-  <div class="form-group row">
-    <div class="col-sm-10" id="buttonRow">
-     <button type="button" class="btn btn-primary" {{action "search"}}>Search</button>
-    </div>
-  </div>
 </form>
