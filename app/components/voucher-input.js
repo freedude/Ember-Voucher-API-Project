@@ -24,7 +24,6 @@ export default Component.extend({
 
             this.createVoucherRecord(voucherData);
             
-
         }
     }
 });

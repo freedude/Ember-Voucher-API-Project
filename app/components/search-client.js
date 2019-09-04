@@ -4,29 +4,26 @@ import $ from 'jquery';
 export default Component.extend({
     classNames: ['search-client-wrapper'],
 
-    didRender() {
-        
-        let input =  $('#phone-search').val();
-        
-        if(input == ""){
-            $('#searchButton').addClass("disabled");
-        }
-       
-      },
-
     actions: {
-        // phoneInput() {
-
-        // },
-
+       
         search() {
-            
+
+            let input =  $('#email-search').val() + $('#phone-search').val();
+
             let query = {
                 email: this.$('#email-search').val(),
                 phone: this.$('#phone-search').val()
             };
 
-            this.searchClient(query);
+            if(input == ""){
+                $('#searchButton').text("Please enter a value");
+                setTimeout(() => {
+                    $('#searchButton').text("Search");
+                }, 2500);
+            } else {
+                this.searchClient(query);
+            }
+
         },
 
        

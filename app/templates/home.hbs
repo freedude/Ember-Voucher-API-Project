@@ -9,6 +9,7 @@
     searchClient=(action "searchClient")
 }}
 
+{{#if this.model.clients}}
 {{#if searchComplete}}
 {{client-info
     class="client-card"
@@ -16,4 +17,10 @@
     cardComponent="client-card"
 }}
 {{/if}}
+{{else}}
+<h5 class="clientSearchError">No clients found</h5>
+{{/if}}
+
+
+
 
