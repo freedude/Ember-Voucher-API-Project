@@ -1,18 +1,26 @@
 .ember-application {
-  background-color: #eeeff0;
+  background-color: $offWhite;
 }
 .header {
   min-height: 4rem;
   width: 100%;
-  background-color:$background-color;
+  background-color:$primary;
 }
 
 .bg-phorest{
-  background-color: $background-color;
+  background-color: $primary;
 }
 
 .phorestLogo {
   width: 50%;
+}
+
+.loading-icon {
+  margin-left: 49%;
+}
+
+.btn-secondary{
+  color: $white !important;
 }
 
 //Common Mixins

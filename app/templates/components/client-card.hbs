@@ -10,7 +10,7 @@
 
 {{#if showVoucherButton}}
 <div class="col client-mobile">
-    <button type="button" class="btn btn-primary" id="createVoucherButton">
+    <button type="button" class="btn btn-secondary" id="createVoucherButton">
         <span id="testClientCardCreated">Create Voucher</span>
     </button>
 </div>
@@ -22,6 +22,11 @@
     client=client
 }}
 {{/if}}
+
+{{#if loadingVoucher}}
+<img class="loading-icon" src="images/loading.gif" alt="spinning loading icon">
+{{/if}}
+
 
 {{#if showRewardCard}}
 {{voucher-card

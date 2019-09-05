@@ -8,6 +8,10 @@
     searchClient=(action "searchClient")
 }}
 
+{{#if loading}}
+<img class="loading-icon" src="images/loading.gif" alt="spinning loading icon">
+{{/if}}
+
 {{#if this.model.clients}}
 {{#if searchComplete}}
 {{client-info
@@ -16,8 +20,13 @@
     cardComponent="client-card"
 }}
 {{/if}}
-{{else}}
+
+{{#if noClients}}
 <h5 id="clientSearchError">No clients found</h5>
+{{/if}}
+{{!-- {{else}}
+<h5 id="clientSearchError">No clients found</h5> --}}
+
 {{/if}}
 
 
