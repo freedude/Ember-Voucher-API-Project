@@ -8,6 +8,13 @@
     flex: 1 1 auto;
 }
 
+.profileImage{
+    width: 80%;
+    margin-top: 7%;
+    margin-left: 7%;
+}
+
+ // Mobile style
 @media screen and (min-width: $mobile) and (max-width: $laptop) {
     .client-card {
         width: 100%;
@@ -22,8 +29,7 @@
         display:none;
     }
     #clientInfoCard {
-        margin-left: 2%;
-        margin-right: 2%;
+        @include mobile-margins;
     }
     #createVoucherButton{
         margin-bottom: 2%;

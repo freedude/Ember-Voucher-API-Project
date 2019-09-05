@@ -1,11 +1,10 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
-import { get, set } from '@ember/object';
-import $ from 'jquery';
+import { set } from '@ember/object';
 
 export default Component.extend({
     store: service(),
-    showAlert: false,
+    
     showRewardCard: false,
     showErrorMessage: false,
     showVoucherButton: true,
@@ -23,17 +22,16 @@ export default Component.extend({
             let voucher = this.store.createRecord('voucher', data);
             set(this, 'voucher', voucher);
 
-            this.set('showRewardCard', true)
-
             voucher.save().then(() => {
                 this.set('showRewardCard', true)
+                this.set('showErrorMessage', false)
             })
                 .catch(() => {
                     this.set('showErrorMessage', true)
+                    this.set('showRewardCard', false)
                 });
 
         }
-
 
     }
 

@@ -4,7 +4,7 @@ import { dasherize } from '@ember/string';
 
 
 export default ApplicationSerializer.extend({
-    serialize(snapshot/*, options*/) {
+    serialize(snapshot) {
         let json = {};
 
         snapshot.eachAttribute((name) => {
@@ -13,11 +13,11 @@ export default ApplicationSerializer.extend({
             }
         });
 
-        json.creatingBranchId = ENV.APP.branchId;
+        json.creatingBranchId = ENV.API.branchId;
         return json;
     },
 
-    normalizeCreateRecordResponse(store, primaryModelClass, payload/*, id, requrestType*/) {
+    normalizeCreateRecordResponse(store, primaryModelClass, payload) {
         let modelName = primaryModelClass.modelName;
         let data = {
             attributes: {}

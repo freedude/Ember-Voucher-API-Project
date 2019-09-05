@@ -19,14 +19,17 @@ module.exports = function (environment) {
     },
 
     APP: {
-      businessId: 'eTC3QY5W3p_HmGHezKfxJw',
-      branchId: 'SE-J0emUgQnya14mOGdQSw'
+      // Here you can pass flags/options to your application instance
+      // when it is created
+    
     },
 
     API: {
-      baseURL: 'http://api-gateway-dev.phorest.com/third-party-api-server',
       username: 'global/cloud@apiexamples.com',
-      password: 'VMlRo/eh+Xd8M~l'
+      password: 'VMlRo/eh+Xd8M~l',
+      endpoint: 'http://api-gateway-dev.phorest.com/third-party-api-server',
+      businessId: 'eTC3QY5W3p_HmGHezKfxJw',
+      branchId: 'SE-J0emUgQnya14mOGdQSw',
     }
   };
 

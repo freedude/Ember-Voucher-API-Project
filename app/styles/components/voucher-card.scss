@@ -1,39 +1,32 @@
-.voucher-card {
+#voucherCard {
   display: flex;
-  background: #6c4c84;
+  background-color: $background-color;
+  color:$white;
   padding: 15px;
-  flew-wrap: wrap;
-  
+  margin-top: 2%;
+  border-radius:12px;
+}
 
-  &__heading {
-    color:#fff;
-    flex: 0.5;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    font-size: 20px;
+#voucherLeft{
+  border-right: 1px solid $white;
+}
 
-    small {
-      // color: $white-color;
-      margin: 40px 0 10px;
-      font-size: 11px;
-    }
+#phorestLogo {
+  margin-top:40%;
+  width:95%;
+}
 
-    button {
-      width: 60px;
-    }
+#voucherError{
+  margin-top: 2%;
+}
+
+ // Mobile style
+ @media screen and (min-width: $mobile) and (max-width: $laptop) {
+  #voucherLeft{
+    border-right: 0px;
   }
-
-  &__amount {
-    flex: 0.5;
-    color: #fff;
-    font-size: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    span {
-      transform: rotate(-20deg);
-    }
+  
+  #phorestLogo {
+    margin-top:0%;
   }
 }

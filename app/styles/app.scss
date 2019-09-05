@@ -1,11 +1,11 @@
-@import './common';
+// Complete .scss imports
 @import './variables';
+@import './common';
 @import './reset';
 
-@import './components/search-client';
-@import './components/voucher-input';
+@import './components/client-search';
 @import './components/client-card';
-@import './components/client-info';
+@import './components/voucher-input';
 @import './components/voucher-card';
 
 @import "ember-bootstrap/bootstrap";

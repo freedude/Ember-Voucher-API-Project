@@ -1,4 +1,3 @@
-
 <div class="col client-name">
     <p class="card-title"><b>Name:</b> {{item.firstName}} {{item.lastName}}</p>
 </div>
@@ -31,7 +30,7 @@
 {{/if}}
 
 {{#if showErrorMessage}}
-<div class="alert alert-danger" role="alert">
+<div class="alert alert-danger" id="voucherError" role="alert">
     There was an Error creating voucher for client, Please try again later
 </div>
 

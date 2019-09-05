@@ -2,12 +2,10 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
     searchComplete: false,
-    checkEmpty: false,
 
     actions: {
-
         searchClient(query) {
-            
+
             Object.entries(query).forEach(([key, value]) => { // Remove the unused email or phone number input value
                 if (value.length === 0) {
                     delete query[key];
@@ -19,17 +17,13 @@ export default Controller.extend({
             
             singleClient.then(() => {
                 this.set('searchComplete', true);               
-
             })
             .catch(() => {
                 // this.set('searchComplete', true)
 
-               
             });
 
         },
-
-        
 
 
     }

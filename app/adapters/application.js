@@ -2,8 +2,8 @@ import DS from 'ember-data';
 import ENV from 'phorest-techtest-sean-freeman/config/environment';
 
 export default DS.JSONAPIAdapter.extend({
-    host: `${ENV.API.baseURL}`,
-    namespace: `api/business/${ENV.APP.businessId}`,
+    host: `${ENV.API.endpoint}`,
+    namespace: `api/business/${ENV.API.businessId}`,
 
 
     init() {

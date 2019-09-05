@@ -2,7 +2,7 @@ import DS from 'ember-data';
 import { dasherize } from '@ember/string';
 
 export default DS.JSONAPISerializer.extend({
-    normalizeResponse(store, primaryModelClass, payload/*, id, requestType*/) {
+    normalizeResponse(store, primaryModelClass, payload) {
         let modelName = primaryModelClass.modelName;
 
         if (payload.content) {
