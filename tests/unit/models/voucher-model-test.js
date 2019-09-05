@@ -5,9 +5,9 @@ module('Unit | Model | voucher model', function(hooks) {
   setupTest(hooks);
 
   // Replace this with your real tests.
-  test('it exists', function(assert) {
+  test('Voucher Model exists', function(assert) {
     let store = this.owner.lookup('service:store');
-    let model = store.createRecord('voucher-model', {});
+    let model = store.createRecord('voucher', {});
     assert.ok(model);
   });
 });

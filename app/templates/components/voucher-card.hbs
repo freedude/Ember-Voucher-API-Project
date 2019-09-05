@@ -1,14 +1,14 @@
-<div class="card mb-3" id="voucherCard" style="max-width: 540px;">
+<div class="card mb-3" id="voucherCard">
   <div class="row no-gutters">
     <div class="col-md-4" id="voucherLeft">
-      <img src="images/phorest-logo.svg" class="card-img" id="phorestLogo" alt="...">
+      <img src="images/phorest-logo.svg" class="card-img" id="phorestLogo" alt="Acorn inside purple circle Phorest logo">
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title"><u>Voucher Sent</u></h5>
+        <h5 class="card-title"><u><span id="testVoucherCardRendered"></span>Voucher Sent</u></h5>
         <p class="card-text"><b>Serial Number:</b> {{voucher.serialNumber}}</p>
         <p class="card-text"><b>Expires:</b> {{voucher.expiryDate}}</p>
-        <p class="card-text"><b>Value:</b>€{{voucher.originalBalance}}</p>
+        <p class="card-text"><b>Value:</b> €{{voucher.originalBalance}}</p>
        
       </div>
     </div>

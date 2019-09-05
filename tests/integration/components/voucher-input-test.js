@@ -3,24 +3,21 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | voucher-amount-input', function(hooks) {
+module('Integration | Component | voucher-input', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
+  test('Voucher Input renders', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<VoucherAmountInput />`);
-
-    assert.equal(this.element.textContent.trim(), '');
+    await render(hbs`{{voucher-input}}`);
 
     // Template block usage:
     await render(hbs`
-      <VoucherAmountInput>
-        template block text
-      </VoucherAmountInput>
+    {{voucher-input}}
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    // assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.querySelector('#testVoucherInputRendered').textContent.trim(), 'Amount');
   });
 });

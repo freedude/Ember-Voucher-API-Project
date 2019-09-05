@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import { visit, currentURL } from '@ember/test-helpers';
+import { visit, currentURL, click, fillIn } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 
 module('Acceptance | home page', function(hooks) {
@@ -11,8 +11,30 @@ module('Acceptance | home page', function(hooks) {
     assert.equal(currentURL(), '/home', 'should automatically redirect');
   });
 
-  test ('should list available vouchers.', async function(assert){
-    await visit('/home');
-    assert.equal(this.element.querySelectorAll('.listing').length,3, 'should display 3 listings');
+  test('Search bar tests', async function(assert) {
+    await visit('/');
+
+    await fillIn('#emailSearch', 'seanfreemantya@gmail.com');
+    await click('#searchButton');
+
+    assert.equal(this.element.querySelector('#clientSearchError').textContent.trim(), 'No clients found');
+
+    await fillIn('#emailSearch', '0.111085034143845@example.com');
+    await click('#searchButton');
+
+    assert.equal(this.element.querySelector('#clientSearchError'),null);
+
+    await fillIn('#phoneSearch', '1234567');
+    await click('#searchButton');
+
+    assert.equal(this.element.querySelector('#clientSearchError').textContent.trim(), 'No clients found');
+
+    await fillIn('#phoneSearch', '11085034143845');
+    await click('#searchButton');
+
+    assert.equal(this.element.querySelector('#testClientCardCreated').textContent.trim(), 'Create Voucher');
+
   });
+
+
 });

@@ -7,11 +7,11 @@ export default Component.extend({
        
         search() {
 
-            let input =  $('#email-search').val() + $('#phone-search').val();
+            let input =  $('#emailSearch').val() + $('#phoneSearch').val();
 
             let query = {
-                email: this.$('#email-search').val(),
-                phone: this.$('#phone-search').val()
+                email: this.$('#emailSearch').val(),
+                phone: this.$('#phoneSearch').val()
             };
 
             if(input == ""){

@@ -3,24 +3,21 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | voucher-display-card', function(hooks) {
+module('Integration | Component | client-search', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
+  test('Client Search renders', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<VoucherDisplayCard />`);
-
-    assert.equal(this.element.textContent.trim(), '');
+    await render(hbs`{{client-search}}`);
 
     // Template block usage:
     await render(hbs`
-      <VoucherDisplayCard>
-        template block text
-      </VoucherDisplayCard>
+      {{client-search}}
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.querySelector('#testSearchButtonRender').textContent.trim(), 'Search');
   });
 });
+

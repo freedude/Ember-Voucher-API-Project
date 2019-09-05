@@ -1,6 +1,6 @@
 .client-card {
-    width: 53%;
-    margin-left: 22%;
+    width: 40%;
+    margin-left: 29%;
 }
 
 .card-horizontal {
@@ -8,10 +8,14 @@
     flex: 1 1 auto;
 }
 
-.profileImage{
+#profileImage{
     width: 80%;
     margin-top: 7%;
     margin-left: 7%;
+}
+
+#clientInfoCard {
+    border-radius: 8px;
 }
 
  // Mobile style
@@ -25,7 +29,7 @@
         padding: 0%;
     }
 
-    .profileImage {
+    #profileImage {
         display:none;
     }
     #clientInfoCard {

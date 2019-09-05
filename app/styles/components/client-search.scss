@@ -1,55 +1,54 @@
-#client-input {
-    margin-top: 2%;
-    margin-left:25%;
-    width: 50%;
-  }
-  
-  .searchInputs{
-   margin-top:2%;
-   margin-left:25%;
-  }
-  
-  .col-form-label {
-    text-align: end;
-  }
-  
-  #buttonRow {
-    margin-left: 43%;
-  }
-  
-  #errorMessage{
-    max-width: 100%;
-  }
-  
-  .clientSearchError{
-    margin-left: 44%;
-  }
-  
-  // Mobile style
-  @media screen and (min-width: $mobile) and (max-width: $laptop) {
-    .searchInputs{
-        @include mobile-margins;
-     }
-     .col-form-label {
-      text-align: left;
-    }
-    #buttonRow {
-      margin-left: 0%;
-    }
-    #searchButton{
-      margin-left: 4%;
-    }
-    #searchInputsFormGroup{
-      margin-bottom: 0%;
-    }
-    .clientSearchError{
-      margin-left: 0%;
-    }
+#searchInputs {
+  margin-top: 2%;
+  margin-left: 25%;
 }
 
-  // Mobile style
-  @media screen and (min-width: $mobile) and (max-width: $mobileL) {
-    #searchButton{
-      margin-top: 2%;
-    }
+.col-form-label {
+  text-align: end;
+}
+
+#buttonRow {
+  margin-left: 43%;
+}
+
+#errorMessage {
+  max-width: 100%;
+}
+
+#clientSearchError {
+  margin-left: 44%;
+}
+
+// Mobile style
+@media screen and (min-width: $mobile) and (max-width: $laptop) {
+  #searchInputs {
+    @include mobile-margins;
+  }
+
+  .col-form-label {
+    text-align: left;
+  }
+
+  #buttonRow {
+    margin-left: 0%;
+  }
+
+  #searchButton {
+    margin-left: 4%;
+  }
+
+  #searchInputsFormGroup {
+    margin-bottom: 0%;
+  }
+
+  #clientSearchError {
+    margin-left: 0%;
+  }
+}
+
+// Mobile style
+@media screen and (min-width: $mobile) and (max-width: $mobileL) {
+  #searchButton {
+    margin-top: 2%;
+  }
 }

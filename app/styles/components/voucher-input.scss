@@ -1,6 +1,6 @@
  // Mobile style
 @media screen and (min-width: $mobile) and (max-width: $laptop) {
-    .voucherInputForm {
+    #voucherInputForm {
         @include mobile-margins;
       }
     
