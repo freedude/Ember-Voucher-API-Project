@@ -19,6 +19,10 @@
   margin-left: 44%;
 }
 
+.fa-search {
+  display: inline;
+}
+
 // Mobile style
 @media screen and (min-width: $mobile) and (max-width: $laptop) {
   #searchInputs {
