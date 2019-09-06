@@ -15,8 +15,8 @@ You will need the following things properly installed on your computer.
 ## Installation
 
 * `git clone <repository-url>` this repository
-* `cd phorest-techtest-sean-freeman`
-* `npm install`
+* `cd Phorest-techtest-SeanFreeman`
+* `npm install` or `yarn install`
 
 ## Running / Development
 

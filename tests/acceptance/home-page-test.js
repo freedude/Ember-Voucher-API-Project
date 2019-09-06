@@ -17,23 +17,22 @@ module('Acceptance | home page', function(hooks) {
     await fillIn('#emailSearch', 'seanfreemantya@gmail.com');
     await click('#searchButton');
 
-    assert.equal(this.element.querySelector('#clientSearchError').textContent.trim(), 'No clients found');
+    assert.equal(this.element.querySelector('#testClientCardCreated'), null);
 
     await fillIn('#emailSearch', '0.111085034143845@example.com');
     await click('#searchButton');
 
-    assert.equal(this.element.querySelector('#clientSearchError'),null);
+    assert.equal(this.element.querySelector('#testClientCardCreated').textContent.trim(),'Create Voucher');
 
     await fillIn('#phoneSearch', '1234567');
     await click('#searchButton');
 
-    assert.equal(this.element.querySelector('#clientSearchError').textContent.trim(), 'No clients found');
+    assert.equal(this.element.querySelector('#testClientCardCreated'), null);
 
     await fillIn('#phoneSearch', '11085034143845');
     await click('#searchButton');
 
-    assert.equal(this.element.querySelector('#testClientCardCreated').textContent.trim(), 'Create Voucher');
-
+    assert.equal(this.element.querySelector('#testClientCardCreated').textContent.trim(), 'Create Voucher')
   });
 
 

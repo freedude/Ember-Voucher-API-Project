@@ -17,7 +17,6 @@ module('Integration | Component | voucher-input', function(hooks) {
     {{voucher-input}}
     `);
 
-    // assert.equal(this.element.textContent.trim(), 'template block text');
-    assert.equal(this.element.querySelector('#testVoucherInputRendered').textContent.trim(), 'Amount');
+    assert.equal(this.element.querySelector('#testVoucherInputRendered').textContent.trim(), 'E-mail to Client');
   });
 });
