@@ -27,7 +27,7 @@ module.exports = function (environment) {
     API: {
       username: 'global/cloud@apiexamples.com',
       password: 'VMlRo/eh+Xd8M~l',
-      endpoint: 'http://api-gateway-dev.phorest.com/third-party-api-server',
+      endpoint: 'https://api-gateway-dev.phorest.com/third-party-api-server',
       businessId: 'eTC3QY5W3p_HmGHezKfxJw',
       branchId: 'SE-J0emUgQnya14mOGdQSw',
     }
