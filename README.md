@@ -1,7 +1,10 @@
 # Ember Voucher API Project
 
-This README outlines the details of collaborating on this Ember application.
 This app integrates with the Phorest API to create vouchers for clients.
+You can use the following details to test the client search function:
+
+Example email: 0.111085034143845@example.com
+Example phone number: 11085034143845
 
 ## Prerequisites
 
