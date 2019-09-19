@@ -1,4 +1,4 @@
-# phorest-techtest-sean-freeman
+# Ember Voucher API Project
 
 This README outlines the details of collaborating on this Ember application.
 This app integrates with the Phorest API to create vouchers for clients.
